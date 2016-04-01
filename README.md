@@ -14,7 +14,8 @@ The section below is the first pass and in progress repo instructions for author
 Author guidelines for submitting and formatting etc will be here for reference.
 User instructions for downloading and installing a module will be here in detail to help facilitate
 loading along with copy/paste file enqueueing examples.
-===============================================================================================
+
+-----------------------------------------------------------------------------------------------
 
 # BP Style Module authoring guidelines & installation instructions
 
