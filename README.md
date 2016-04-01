@@ -33,4 +33,10 @@ A core BP dev  will download your submission and run a basic check for formattin
 
 Authors are responsible for maintaining their modules against BP release cycles, ensuring that their module still performs as expected for new BP releases.
 
+**Module files:**
+
+* All Modules must include one of either a .css or .js file
+* Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and comformity to a known existing standard.
+* Optionally  please try to include a SC of your styles in action.
+
 ## Module Installation Instructions:
