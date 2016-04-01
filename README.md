@@ -1,4 +1,4 @@
-# style-modules
+# Style Modules - Buddypress styling Library Snippets
 **BP Style Modules - a test repo to explore the proposed style library for the BuddyPress project**
 ----------------------------------------------------------------------------------------------
 
@@ -20,4 +20,4 @@ loading along with copy/paste file enqueueing examples.
 **Authors Guidelines:**
 
 
-**Module Installation instructions:**
+**Module Installation Instructions:**
