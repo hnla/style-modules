@@ -14,10 +14,22 @@ The section below is the first pass and in progress repo instructions for author
 Author guidelines for submitting and formatting etc will be here for reference.
 User instructions for downloading and installing a module will be here in detail to help facilitate
 loading along with copy/paste file enqueueing examples.
+===============================================================================================
 
 # BP Style Module authoring guidelines & installation instructions
 
-**Authors Guidelines:**
+## Authors Guidelines:
 
+All submisions are made by creating a ticket on trac.buddypress
 
-**Module Installation Instructions:**
+Upload your folder(files) complete with SC & readme.md
+
+Add a brief decription of your submissions styling purpose e.g _"styles the user message tables..."_ 
+
+A core BP dev  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress repo.
+
+**Updates**
+
+Authors are responsible for maintaining their modules against BP release cycles, ensuring that their module still performs as expected for new BP releases.
+
+## Module Installation Instructions:
