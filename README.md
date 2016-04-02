@@ -21,7 +21,9 @@ loading along with copy/paste file enqueueing examples.
 
 ## Authors Guidelines:
 
-All submisions are made by creating a ticket on trac.buddypress
+
+**Submitting**
+All submisions should be made by creating a ticket on trac.buddypress
 
 Upload your folder(files) complete with SC & readme.md
 
@@ -33,10 +35,16 @@ A core BP dev  will download your submission and run a basic check for formattin
 
 Authors are responsible for maintaining their modules against BP release cycles, ensuring that their module still performs as expected for new BP releases.
 
-**Module files:**
+**Creating Module files:**
 
 * All Modules must include one of either a .css or .js file
 * Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and comformity to a known existing standard.
 * Optionally  please try to include a SC of your styles in action.
 
+
+readme.txt file we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
+* The header details ( initially BP might be using thse but we are adding so that we can at a later date)
+* The module description - this is how we'll ensure that users can understans what the module offers ( SC also help here! )
+* * Installation guide complete with copy/paste code ( following the example provided we need  the module to provide quite detailed steps to installing, copy/paste code using your module name where applicable will help non technical users)
+* 
 ## Module Installation Instructions:
