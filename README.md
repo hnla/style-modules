@@ -56,9 +56,9 @@ These files will follow the formatting guidelines setout by WP.
 **Stylesheets**
 Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targetted to BP elements only, alo they should try and use ancestor elements that represent the component this module is dealing with.
 
-You may work with scss or less hoever please ensure compiled files are present in the module package along with the source pre-processor file.
+You may work with scss or less however please ensure compiled files are present in the module package along with the source pre-processor file.
 
 rtl versions - you will know whether you need to address rtl layouts (i.e floats left & right) if so please include rtl file version.
 
  
-## Module Installation Instructions:
+## Module Installation Instructions: ##
