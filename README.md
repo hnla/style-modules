@@ -39,6 +39,7 @@ Authors are responsible for maintaining their modules against BP release cycles,
 
 * All Modules must include one of either a .css or .js file
 * Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and comformity to a known existing standard.
+* Additionally each module should contain a readme.md file this is specifically for github display and allows us to display a neat and simplified module title and description to be displayed for users
 * Optionally  please try to include a SC of your styles in action.
 
 
