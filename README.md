@@ -42,9 +42,9 @@ Authors are responsible for maintaining their modules against BP release cycles,
 * Optionally  please try to include a SC of your styles in action.
 
 
-readme.txt file we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
+**readme.txt file** we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
 * The header details ( initially BP might be using thse but we are adding so that we can at a later date)
 * The module description - this is how we'll ensure that users can understans what the module offers ( SC also help here! )
-* * Installation guide complete with copy/paste code ( following the example provided we need  the module to provide quite detailed steps to installing, copy/paste code using your module name where applicable will help non technical users)
-* 
+*  Installation guide complete with copy/paste code ( following the example provided we need  the module to provide quite detailed steps to installing, copy/paste code using your module name where applicable will help non technical users)
+ 
 ## Module Installation Instructions:
