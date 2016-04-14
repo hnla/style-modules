@@ -21,25 +21,24 @@ module.exports = function(grunt) {
       preproc: MODULE_DIR + MODULE_NAME + preprocext,
     },
 
+    // https://github.com/sass/node-sass  - config
     sass: {                              // Task
       dist: {                            // Target
+        options: { // Target options
+          outputStyle: 'expanded',
+          unixNewlines: true,
+          indentType: 'tab',
+          indentWidth: '1',
+          indentedSyntax: false,
+        },
         styles: {
           cwd: MODULE_DIR,
           extDot: 'last',
           expand: true,
           ext: '.css',
           flatten: true,
-          src:  '<%= files.preproc %>',
-          dest: '<%= files.css %>',
-          options: { // Target options
-            outputStyle: 'expanded',
-            map: {inline: false},
-            //unixNewlines: true
-            indentType: 'tab',
-            indentWidth: '1',
-            indentedSyntax: false,
-            sourceMap: false,
-          },
+          //src:  '<%= files.preproc %>',
+          //dest: '<%= files.css %>',
         },
         files: {                        // Dictionary of files
           '<%= files.css %>':  '<%= files.preproc %>',       // 'destination': 'source'
@@ -48,6 +47,7 @@ module.exports = function(grunt) {
     },
 
   // Uncomment less task to use.
+  // https://github.com/gruntjs/grunt-contrib-less
 /*
     less: {
       development: {
@@ -77,16 +77,19 @@ module.exports = function(grunt) {
     },
 */
     rtlcss: {
+      options: {
+      //map: {inline: false},
+          opts: {
+            clean: true,
+            processUrls: false,
+            autoRename: false,
+          },
+        saveUnmodified: false,
+        sourcemap: 'none',
+      },
+
       buildrtl: {
-        options: {
-          map: {inline: false},
-            opts: {
-              clean: true,
-              processUrls: false,
-              autoRename: false,
-            },
-          saveUnmodified: false,
-        },
+
         core: {
         expand: true,
         cwd: 'style-modules/',
@@ -146,7 +149,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-check-dependencies');
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  //grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   //grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-rtlcss');
