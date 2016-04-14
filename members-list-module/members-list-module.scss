@@ -1,0 +1,32 @@
+/*
+ Theme Name: BP Members lists module
+ Description: Styles BP members dir list view
+ Author URI: https://buddypress.org/
+	Version: 1.0
+	JS support file: members-list-module-js.js
+ */
+
+/*
+This file has a companion js file.
+ */
+
+#buddypress {
+
+	#members {
+		li {
+			background: #fofooo;
+			color: #222;
+
+			a {
+				border-left: 1px solid #000;
+				border-right: 2px solid #ccc;
+				color: #555;
+				float: left;
+				font-size: 70px;
+				position: relative;
+				right: 30px;
+				width: 80%;
+			}
+		}
+	}
+}
