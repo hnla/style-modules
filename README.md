@@ -1,4 +1,4 @@
-# Style Modules - Buddypress styling Library Snippets
+# Style Modules - BuddyPress styling Library Snippets
 **BP Style Modules - a test repo to explore the proposed style library for the BuddyPress project**
 ----------------------------------------------------------------------------------------------
 
@@ -7,7 +7,7 @@ This repo explores how the proposed Style Modules might be organized on the BP r
 The Project proposal was written up and published to BuddyPress's bpdevel site:
 (https://bpdevel.wordpress.com/2016/03/30/bp-style-modules-a-proposal/)
 
-This repo contains one module directory and some further dummy examples for show. The ultimate purpose of the repo is to maintain the modules as seen in the repo _not_ to clone the the repo or download the repo (unless ones in initial core dev work) Module authors and users would be submitting and downloading the individual module folders and files. This process as it would be setup and run on github is not decided on at this stage.
+This repo contains one module directory and some further dummy examples for show. The ultimate purpose of the repo is to maintain the modules as seen in the repo _not_ to clone the the repo or download the repo (unless ones in initial core dev work, in which case by all means do clone the repo to obtain the dir structure and grunt tools) Module authors and users would be submitting and downloading the individual module folders and files. This process as it would be setup and run on github is not 100% decided on at this stage.
 
 -----------------------------------------------------------------------------------------------
 The section below is the first pass and in progress repo instructions for authors and users.
@@ -42,7 +42,32 @@ Authors are responsible for maintaining their modules against BP release cycles,
 * Additionally each module should contain a readme.md file this is specifically for github display and allows us to display a neat and simplified module title and description to be displayed for users
 * Optionally  please try to include a SC of your styles in action.
 
+**Grunt task tools**
 
+The repo root does contain a package.json to install grunt modules via npm along with a configured gruntfile.js to load and configure tasks.
+
+Feel free to use thse tools or not the choice is entirely yours.
+
+The gruntfile sets up scss, less, scsslint, rtlcss, and watch tasks.
+
+At the cli running:
+$ grunt watch // will start the watch task, configured by default to watch for changes to .scss files in your named dir
+
+$ grunt scsslint // will check your scss file against the yml config file in the repo root (these are BP's default file formatting)
+
+$ grunt rtlcss // will create a right to left mirror file from your css file.
+
+$ grunt commit // is a reg task that will run both linting and rtl tasks one after the other.
+
+If you do use these tools you must configure the top var MODULE_NAME = 'my-cool-styles-module';
+
+This var is used to build or the file paths and file names we need and in the correct directory so is important.
+
+In addition specify what pre-processor type your using scss or less.
+
+The less provision is mainly commented out and the less aspects would need testing but should work.
+
+Naturally if you're using gruntfile please feel free to re-fashion as you feel fit, this is only provided as a convenience.
 ####readme.txt file###
 we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
 * The header details ( initially BP might be using thse but we are adding so that we can at a later date)
