@@ -2,27 +2,38 @@ module.exports = function(grunt) {
 
   // Project configuration.
   // Configure your modules name
+  // Must end in 'module' file names must mirror modules dir name
   var MODULE_NAME = 'members-list-module';
+
+  // Are sassing or lessing?
+  // string: '.scss' or '.less'
+  var preprocext = '.scss';
 
   //======================================
   var MODULE_DIR = MODULE_NAME + '/';
-  var DEST_FILE  = MODULE_DIR + MODULE_NAME + '.css';
-  var SRC_FILE   = MODULE_DIR + MODULE_NAME + '.scss';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    files: {
+      rtl:     MODULE_DIR + MODULE_NAME + '-rtl.css',
+      css:     MODULE_DIR + MODULE_NAME + '.css',
+      preproc: MODULE_DIR + MODULE_NAME + preprocext,
+    },
+
     sass: {                              // Task
       dist: {                            // Target
         styles: {
-          cwd: 'style-modules/',
+          cwd: MODULE_DIR,
           extDot: 'last',
           expand: true,
           ext: '.css',
           flatten: true,
-          src: [MODULE_DIR + '*.scss'],
-          dest: 'style-modules/' + MODULE_DIR,
+          src:  '<%= files.preproc %>',
+          dest: '<%= files.css %>',
           options: { // Target options
-            style: 'expanded',
+            outputStyle: 'expanded',
+            map: {inline: false},
             //unixNewlines: true
             indentType: 'tab',
             indentWidth: '1',
@@ -31,33 +42,72 @@ module.exports = function(grunt) {
           },
         },
         files: {                        // Dictionary of files
-          'members-list-module/members-list-module.css':  'members-list-module/members-list-module.scss',       // 'destination': 'source'
+          '<%= files.css %>':  '<%= files.preproc %>',       // 'destination': 'source'
         }
       }
     },
+
+  // Uncomment less task to use.
+/*
+    less: {
+      development: {
+        options: {
+          paths: [ MODULE_DIR ]
+        },
+        files: {
+          '<%= files.css %>':  '<%= files.preproc %>'
+        }
+      },
+      production: {
+        options: {
+          paths: [ MODULE_DIR ],
+          plugins: [
+            new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
+            new (require('less-plugin-clean-css'))(cleanCssOptions)
+          ],
+          //modifyVars: {
+          //  imgPath: '"http://mycdn.com/path/to/images"',
+          //  bgColor: 'red'
+          //}
+        },
+        files: {
+          '<%= files.css %>':  '<%= files.preproc %>'
+        }
+      }
+    },
+*/
     rtlcss: {
       buildrtl: {
         options: {
           map: {inline: false},
-          opts: {
-            clean: false,
-          },
+            opts: {
+              clean: true,
+              processUrls: false,
+              autoRename: false,
+            },
+          saveUnmodified: false,
         },
+        core: {
         expand: true,
         cwd: 'style-modules/',
-        dest: 'style-modules/' + MODULE_DIR,
-        //ext: '-rtl.css',
-        src: ['style-modules/members-list-module/members-list-module.css'],
+        dest: MODULE_DIR,
+        ext: '-rtl.css',
+        src: '<%= files.css %>',
+        },
+        files:  {
+            '<%= files.rtl %>' : '<%= files.css %>',
+        }
+
       },
     },
-
+    // lint scss files
     scsslint: {
       options: {
         bundleExec: false,
         colorizeOutput: true,
         config: '.scss-lint.yml'
       },
-      core: [ MODULE_DIR + MODULE_NAME + '.scss' ]
+      core: [ MODULE_DIR + MODULE_NAME + preprocext ]
     },
     checkDependencies: {
       //https://www.npmjs.com/package/grunt-check-dependencies
@@ -79,10 +129,17 @@ module.exports = function(grunt) {
       //},
       sass: {
         files: [
-          MODULE_DIR + MODULE_NAME + '.scss',
+          MODULE_DIR + MODULE_NAME + preprocext,
           ],
         tasks: 'sass'
       }
+      // uncomment to let 'watch' run on less files.
+     /* less: {
+        files: [
+          MODULE_DIR + MODULE_NAME + preprocext,
+          ],
+        tasks: 'less'
+      } */
     }
 });
 
@@ -90,6 +147,7 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  //grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-rtlcss');
 
