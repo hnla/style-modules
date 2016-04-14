@@ -1,4 +1,4 @@
-# Style Modules - Buddypress styling Library Snippets
+# Style Modules - BuddyPress styling Library Snippets
 **BP Style Modules - a test repo to explore the proposed style library for the BuddyPress project**
 ----------------------------------------------------------------------------------------------
 
