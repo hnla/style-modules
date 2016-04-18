@@ -4,6 +4,7 @@
  Author URI: https://buddypress.org/
 	Version: 1.0
 	JS support file: members-list-module-js.js
+	Theme - tested to: twentyfifteen
  */
 
 /* =====================================================
@@ -22,14 +23,19 @@ the main Members dir or in the
 		// Mainly reset any values inherited and state some base
 		// styles all sizes up.
 
-		>li {
+		>li,
+		>li .generic-button a {
 			// scss-lint:disable VendorPrefix
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			// scss-lint:enable VendorPrefix
 			box-sizing: border-box;
+		}
+
+		>li {
 			margin-bottom: 1rem;
 			overflow: hidden;
+			padding-bottom: 0;
 
 			.item-avatar {
 				text-align: center;
@@ -41,11 +47,21 @@ the main Members dir or in the
 			}
 
 			.item {
+				left: 0;
 				width: auto;
 			}
 
 			div.action {
+				float: none;
 				margin-bottom: 0;
+				position: relative;
+				text-align: center;
+
+				.generic-button {
+					display: block;
+					float: none;
+					margin: 0.2em 0;
+				}
 			}
 
 			.item-avatar,
@@ -61,7 +77,7 @@ the main Members dir or in the
 		@media screen and (min-width: 38.75em) {
 			>li {
 				float: left;
-				min-height: 500px;
+				min-height: 430px;
 				width: 50%;
 
 				&:nth-child(odd) {
@@ -72,17 +88,44 @@ the main Members dir or in the
 					border-left: 10px solid #fff;
 				}
 
-				.item-title {
-					min-height: 10em;
+				.item-meta {
+					text-align: center;
 				}
-			}
-		}
+
+				.item {
+					margin: 1em auto;
+					width: 80%;
+
+					.item-title {
+						min-height: 10em;
+						width: auto;
+					}
+				}
+
+				div.action {
+					float: none;
+					margin-bottom: 0;
+					position: relative;
+					text-align: center;
+
+					.generic-button {
+						display: inline-block;
+						float: none;
+						margin: 0.2em 0.2em;
+					}
+				}
+
+			} // close >li
+		} // close @media
 
 		@media screen and (min-width: 59.6875em) {
 			>li {
+				min-height: 430px;
+
 				&:nth-child(odd),
 				&:nth-child(even) {
-					border: 0;
+					border-left: 0;
+					border-right: 0;
 				}
 
 				width: 33.3%;
@@ -101,8 +144,9 @@ the main Members dir or in the
 					border-left: 0;
 					border-right: 10px solid #fff;
 				}
-			}
-		}
+
+			} // close >li
+		} // close @media
 
 	} // close #members-list
 
