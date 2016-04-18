@@ -1,29 +1,84 @@
 /*
  Theme Name: BP Members lists module
- Description: Styles BP members dir list view
+ Description: Styles BP members list views
  Author URI: https://buddypress.org/
 	Version: 1.0
 	JS support file: members-list-module-js.js
  */
-/*
-This file has a companion js file.
- */
-#buddypress #members li {
-	background: #fofooo;
-	color: #222;
+/* =====================================================
+Members-list-panels is a small css snippet to provide
+Styling of the members directory list entries as seen in
+the main Members dir or in the
+======================================================= */
+#buddypress .avatar {
+	border-radius: 50%;
 }
 
-#buddypress #members li a {
-	border-left: 1px solid #000;
-	border-right: 2px solid #ccc;
-	color: #555;
-	float: left;
-	font-size: 16px;
-	position: relative;
-	right: 10px;
-	width: 80%;
+#buddypress #members-list > li {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 1rem;
+	overflow: hidden;
 }
 
-body {
-	color: #333;
+#buddypress #members-list > li .item-avatar {
+	text-align: center;
+}
+
+#buddypress #members-list > li .item-avatar .avatar {
+	display: inline-block;
+	width: 50%;
+}
+
+#buddypress #members-list > li .item {
+	width: auto;
+}
+
+#buddypress #members-list > li div.action {
+	margin-bottom: 0;
+}
+
+#buddypress #members-list > li .item-avatar,
+#buddypress #members-list > li .avatar,
+#buddypress #members-list > li .item {
+	float: none;
+}
+
+@media screen and (min-width: 38.75em) {
+	#buddypress #members-list > li {
+		float: left;
+		min-height: 500px;
+		width: 50%;
+	}
+	#buddypress #members-list > li:nth-child(odd) {
+		border-right: 10px solid #fff;
+	}
+	#buddypress #members-list > li:nth-child(even) {
+		border-left: 10px solid #fff;
+	}
+	#buddypress #members-list > li .item-title {
+		min-height: 10em;
+	}
+}
+
+@media screen and (min-width: 59.6875em) {
+	#buddypress #members-list > li {
+		width: 33.3%;
+	}
+	#buddypress #members-list > li:nth-child(odd), #buddypress #members-list > li:nth-child(even) {
+		border: 0;
+	}
+	#buddypress #members-list > li:nth-child(2n+2) {
+		border-left: 5px solid #fff;
+		border-right: 5px solid #fff;
+	}
+	#buddypress #members-list > li:nth-child(3n+3) {
+		border-left: 10px solid #fff;
+		border-right: 0;
+	}
+	#buddypress #members-list > li:nth-child(3n+1) {
+		border-left: 0;
+		border-right: 10px solid #fff;
+	}
 }
