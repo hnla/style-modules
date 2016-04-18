@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   // Must end in 'module' file names must mirror modules dir name
   var MODULE_NAME = 'members-list-module';
 
-  // Are sassing or lessing?
+  // Are we sassing or lessing?
   // string: '.scss' or '.less'
   var preprocext = '.scss';
 
@@ -31,18 +31,16 @@ module.exports = function(grunt) {
           indentWidth: '1',
           indentedSyntax: false,
         },
-        styles: {
-          cwd: MODULE_DIR,
-          extDot: 'last',
-          expand: true,
-          ext: '.css',
-          flatten: true,
-          //src:  '<%= files.preproc %>',
-          //dest: '<%= files.css %>',
-        },
-        files: {                        // Dictionary of files
+        cwd: MODULE_DIR,
+        extDot: 'last',
+        expand: true,
+        ext: '.css',
+        flatten: true,
+        src:  ['*.scss'],
+        dest: 'members-list-module/',
+        /*files: {                        // Dictionary of files
           '<%= files.css %>':  '<%= files.preproc %>',       // 'destination': 'source'
-        }
+        }*/
       }
     },
 
