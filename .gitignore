@@ -7,3 +7,5 @@ composer.phar
 .sass-cache
 node_modules
 /members-list-module/*.map
+/*.sublime-project
+/*.sublime-workspace
