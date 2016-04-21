@@ -94,6 +94,7 @@ Formatting guidelines:  https://make.wordpress.org/core/handbook/best-practices/
 ## Module Installation Instructions: ##
 In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends.
 e.g:
+
 		-------------------------------------------------------------------------------
 
 		function enqueue_members_list_style() {
