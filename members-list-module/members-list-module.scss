@@ -13,6 +13,12 @@ Styling of the members directory list entries as seen in
 the main Members dir or in the
 ======================================================= */
 
+// ####### scss vars ########
+// colors
+$mlm-light-grey: #f7f7f7;
+//
+//###########################
+
 #buddypress {
 
 	.avatar {
@@ -21,7 +27,9 @@ the main Members dir or in the
 
 	#members-list {
 		// Mainly reset any values inherited and state some base
-		// styles all sizes up.
+		// styles for small up.
+		clear: both;
+		padding-top: 15px;
 
 		>li,
 		>li .generic-button a {
@@ -33,7 +41,9 @@ the main Members dir or in the
 		}
 
 		>li {
-			margin-bottom: 1rem;
+			background: $mlm-light-grey;
+			border-bottom: 0;
+			margin-bottom: 15px;
 			overflow: hidden;
 			padding-bottom: 0;
 
@@ -71,7 +81,7 @@ the main Members dir or in the
 
 			div.action {
 				float: none;
-				margin-bottom: 0;
+				margin: 0 5px;
 				position: relative;
 				text-align: center;
 
@@ -103,7 +113,7 @@ the main Members dir or in the
 
 			>li {
 				float: left;
-				min-height: 460px;
+				min-height: 475px;
 				width: 50%;
 
 				&:nth-child(odd) {
@@ -130,7 +140,7 @@ the main Members dir or in the
 
 				div.action {
 					float: none;
-					margin-bottom: 0;
+					margin: 0;
 					position: relative;
 					text-align: center;
 
@@ -146,16 +156,10 @@ the main Members dir or in the
 
 		@media screen and (min-width: 59.6875em) {
 			>li {
-				min-height: 450px;
+				min-height: 420px;
 				width: 33.3%;
 
-				&:nth-child(odd),
-				&:nth-child(even) {
-					border-left: 0;
-					border-right: 0;
-				}
-
-				&:nth-child(2n+2) {
+				&:nth-child(1n+1) {
 					border-left: 5px solid #fff;
 					border-right: 5px solid #fff;
 				}

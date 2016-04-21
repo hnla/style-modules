@@ -152,7 +152,7 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-rtlcss');
-
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   // Build rtl css
   grunt.registerTask('commit', ['rtlcss', 'scsslint']);
 

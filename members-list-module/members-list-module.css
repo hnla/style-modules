@@ -15,6 +15,11 @@ the main Members dir or in the
 	border-radius: 50%;
 }
 
+#buddypress #members-list {
+	clear: both;
+	padding-top: 15px;
+}
+
 #buddypress #members-list > li,
 #buddypress #members-list > li .generic-button a {
 	-moz-box-sizing: border-box;
@@ -23,7 +28,9 @@ the main Members dir or in the
 }
 
 #buddypress #members-list > li {
-	margin-bottom: 1rem;
+	background: #f7f7f7;
+	border-bottom: 0;
+	margin-bottom: 15px;
 	overflow: hidden;
 	padding-bottom: 0;
 }
@@ -63,7 +70,7 @@ the main Members dir or in the
 
 #buddypress #members-list > li div.action {
 	float: none;
-	margin-bottom: 0;
+	margin: 0 5px;
 	position: relative;
 	text-align: center;
 }
@@ -86,7 +93,7 @@ the main Members dir or in the
 	}
 	#buddypress #members-list > li {
 		float: left;
-		min-height: 460px;
+		min-height: 475px;
 		width: 50%;
 	}
 	#buddypress #members-list > li:nth-child(odd) {
@@ -108,7 +115,7 @@ the main Members dir or in the
 	}
 	#buddypress #members-list > li div.action {
 		float: none;
-		margin-bottom: 0;
+		margin: 0;
 		position: relative;
 		text-align: center;
 	}
@@ -121,14 +128,10 @@ the main Members dir or in the
 
 @media screen and (min-width: 59.6875em) {
 	#buddypress #members-list > li {
-		min-height: 450px;
+		min-height: 420px;
 		width: 33.3%;
 	}
-	#buddypress #members-list > li:nth-child(odd), #buddypress #members-list > li:nth-child(even) {
-		border-left: 0;
-		border-right: 0;
-	}
-	#buddypress #members-list > li:nth-child(2n+2) {
+	#buddypress #members-list > li:nth-child(1n+1) {
 		border-left: 5px solid #fff;
 		border-right: 5px solid #fff;
 	}
