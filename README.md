@@ -27,7 +27,7 @@ All submisions should be made by creating a ticket on trac.buddypress
 
 Upload your folder(files) complete with SC & readme.md
 
-Add a brief decription of your submissions styling purpose e.g _"styles the user message tables..."_ 
+Add a brief decription of your submissions styling purpose e.g _"styles the user message tables..."_
 
 A core BP dev  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress repo.
 
@@ -67,7 +67,8 @@ In addition specify what pre-processor type your using scss or less.
 
 The less provision is mainly commented out and the less aspects would need testing but should work.
 
-Naturally if you're using gruntfile please feel free to re-fashion as you feel fit, this is only provided as a convenience.
+Naturally if you're using the gruntfile please feel free to re-factor as you feel fit, this is only provided as a convenience.
+
 ####readme.txt file###
 we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
 * The header details ( initially BP might be using thse but we are adding so that we can at a later date)
@@ -79,11 +80,16 @@ we'll broadly follow the conventions of use by WordPress plugins for this file; 
 These files will follow the formatting guidelines setout by WP.
 
 **Stylesheets**
-Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targetted to BP elements only, alo they should try and use ancestor elements that represent the component this module is dealing with.
+Formatting guidelines: https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/
+
+Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targetted to BP elements only, also they should try and use ancestor elements that represent the component this module is dealing with.
 
 You may work with scss or less however please ensure compiled files are present in the module package along with the source pre-processor file.
 
 rtl versions - you will know whether you need to address rtl layouts (i.e floats left & right) if so please include rtl file version.
 
- 
+**JavaScript**
+Formatting guidelines:  https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/
+
 ## Module Installation Instructions: ##
+In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends.
