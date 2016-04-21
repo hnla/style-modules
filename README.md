@@ -93,3 +93,16 @@ Formatting guidelines:  https://make.wordpress.org/core/handbook/best-practices/
 
 ## Module Installation Instructions: ##
 In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends.
+e.g:
+	-------------------------------------------------------------------------------
+
+		function enqueue_members_list_style() {
+					wp_enqueue_style( 'members-list-module-styles',  get_stylesheet_directory_uri() . '/buddypress/style-modules/members-list-module/members-list-module.css', array('bp-legacy-css'), false, 'screen' );
+		}
+		function enqueue_members_list_script() {
+					wp_enqueue_script( 'members-list-module-script', get_stylesheet_directory_uri() . '/buddypress/style-modules/members-list-module/members-list-module.js', array('jquery'), false, true );
+		}
+		add_action('bp_enqueue_scripts', 'enqueue_members_list_style', 20);
+		add_action('bp_enqueue_scripts', 'enqueue_members_list_script');
+
+		-------------------------------------------------------------------------------
