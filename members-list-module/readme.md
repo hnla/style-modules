@@ -1,5 +1,5 @@
 #BuddyPress Members List Style Module
-![alt text](https://github.com/hnla/style-modules/members-list-module/members-as-grid-view.jpg "Styling the members lists as box grid.")
+![alt text](https://github.com/hnla/style-modules/tree/master/members-list-module/members-as-grid-view.jpg "Styling the members lists as box grid.")
 ## Description:
 
 This module styles your members listings in the members directory and lists in the users profile pages as box panels arranged in a grid style for medium sized devices like tablets and desktops in landscape orientation and at mobile widths stacks the lists vertically.
