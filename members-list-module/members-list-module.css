@@ -45,6 +45,7 @@ the main Members dir or in the
 }
 
 #buddypress #members-list > li .item {
+	font-size: 1.6rem;
 	left: 0;
 	margin: 0 auto;
 	text-align: center;
@@ -88,12 +89,18 @@ the main Members dir or in the
 }
 
 @media screen and (min-width: 38.75em) {
-	#buddypress #members-list li.is-current-user .item {
-		margin-bottom: 50px;
+	#buddypress #members-list {
+		/*		li.is-current-user {
+				.item {
+
+				}
+			}
+*/
 	}
 	#buddypress #members-list > li {
 		float: left;
-		min-height: 475px;
+		min-height: 480px;
+		padding-bottom: 10px;
 		width: 50%;
 	}
 	#buddypress #members-list > li:nth-child(odd) {
@@ -106,7 +113,7 @@ the main Members dir or in the
 		text-align: center;
 	}
 	#buddypress #members-list > li .item {
-		margin: 1rem auto;
+		margin: 1rem auto 0;
 		width: 80%;
 	}
 	#buddypress #members-list > li .item .item-title {
@@ -115,7 +122,6 @@ the main Members dir or in the
 	}
 	#buddypress #members-list > li div.action {
 		float: none;
-		margin: 0;
 		position: relative;
 		text-align: center;
 	}
@@ -128,7 +134,6 @@ the main Members dir or in the
 
 @media screen and (min-width: 59.6875em) {
 	#buddypress #members-list > li {
-		min-height: 420px;
 		width: 33.3%;
 	}
 	#buddypress #members-list > li:nth-child(1n+1) {
