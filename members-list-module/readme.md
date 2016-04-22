@@ -2,7 +2,7 @@
 
 ## Description:
 
-This module styles your members listings in the members directory and lists in the users profile pages as box panels arranged in a grid style for medium sized devices like tablets and desktops in landscaper orientation and at mobile widths stacks the lists virtically.
+This module styles your members listings in the members directory and lists in the users profile pages as box panels arranged in a grid style for medium sized devices like tablets and desktops in landscape orientation and at mobile widths stacks the lists vertically.
 
 The module requires a companion script file providing some enhancements to add equal height to elements.
 
