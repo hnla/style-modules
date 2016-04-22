@@ -1,0 +1,6 @@
+{
+  "name": "BuddyPress Style Modules",
+  "tagline": "BP Style Modules - A repository of style snippets to enhance your BuddyPress powred site",
+  "body": "### Welcome to the Styles Modules pages\r\nHere you can find details on using  and installing style modules or authoring snippets for the BP community.\r\n'Snippets'? Snippets is simply a reference to a shorter block of code in our case these snippets are small modular styles that target specific aspects or components of your BP site, as an example the 'Members List Module' to transform the lists into grid like boxes.\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
