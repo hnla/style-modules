@@ -9,13 +9,16 @@ The Project proposal was written up and published to BuddyPress's bpdevel site:
 
 This repo contains one module directory and some further dummy examples for show. The ultimate purpose of the repo is to maintain the modules as seen in the repo _not_ to clone the the repo or download the repo (unless ones in initial core dev work, in which case by all means do clone the repo to obtain the dir structure and grunt tools) Module authors and users would be submitting and downloading the individual module folders and files. This process as it would be setup and run on github is not 100% decided on at this stage.
 
------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 The section below is the first pass and in progress repo instructions for authors and users.
 Author guidelines for submitting and formatting etc will be here for reference.
 User instructions for downloading and installing a module will be here in detail to help facilitate
 loading along with copy/paste file enqueueing examples.
 
------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+Project pages home:
+http://hnla.github.io/style-modules
 
 # BP Style Module authoring guidelines & installation instructions
 
