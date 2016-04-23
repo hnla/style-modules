@@ -14,6 +14,7 @@ This repo contains one module directory and some further dummy examples for show
 Would be a case of simply creating  a ul list of modules, links to the module on the repo, displaying brief description, and screenshot.
 
 We can choose to use a new page on bp .org or create a github page for this purpose.
+
 -----------------------------------------------------------------------------------------------------
 The section below is the first pass and in progress repo instructions for authors and users.
 Author guidelines for submitting and formatting etc will be here for reference.
