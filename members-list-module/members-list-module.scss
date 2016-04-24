@@ -13,11 +13,11 @@ Styling of the members directory list entries as seen in
 the main Members dir or in the
 ======================================================= */
 
-// ####### scss vars ########
+// ## scss vars ##
 // colors
 $mlm-light-grey: #f7f7f7;
 //
-//###########################
+
 
 #buddypress {
 
@@ -73,10 +73,11 @@ $mlm-light-grey: #f7f7f7;
 
 					.update {
 						text-align: left;
-
-						.activity-read-more a {display: inline;}
 					}
+				}
 
+				.activity-read-more a {
+					display: inline;
 				}
 			}
 
@@ -102,16 +103,16 @@ $mlm-light-grey: #f7f7f7;
 		} // close li generic
 
 
-		// Manage the li floated widths & spacing at two break points
+		// Manage the li floated widths & spacing for two break points
 
 		@media screen and (min-width: 38.75em) {
 
-	/*		li.is-current-user {
-				.item {
+	//		li.is-current-user {
+	//			.item {
 
-				}
-			}
-*/
+//				}
+//			}
+
 			>li {
 				float: left;
 				min-height: 480px;

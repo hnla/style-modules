@@ -65,7 +65,7 @@ the main Members dir or in the
 	text-align: left;
 }
 
-#buddypress #members-list > li .item .item-title .update .activity-read-more a {
+#buddypress #members-list > li .item .activity-read-more a {
 	display: inline;
 }
 
@@ -89,14 +89,6 @@ the main Members dir or in the
 }
 
 @media screen and (min-width: 38.75em) {
-	#buddypress #members-list {
-		/*		li.is-current-user {
-				.item {
-
-				}
-			}
-*/
-	}
 	#buddypress #members-list > li {
 		float: left;
 		min-height: 480px;
