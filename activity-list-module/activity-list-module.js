@@ -4,7 +4,7 @@
 
 (function($){
 
-$('body').hide();
+//$('body').hide();
 //	var viewportWidth = $(window).width();
 
 
