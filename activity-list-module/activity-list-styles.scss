@@ -1,0 +1,19 @@
+/*
+ Theme Name: BP Activity lists module
+ Description: Styles BP Activity list views
+ Author URI: https://buddypress.org/
+	Version: 1.0
+	JS support file: activity-list-module.js
+	Theme - tested for: twentyfifteen
+ */
+
+/* =====================================================
+Activity-lists is a small css snippet to provide
+Styling of the activity directory list entries as seen in
+the main activity dir or users account screens.
+======================================================= */
+body {
+	#buddypress {
+		.activity-list {background: #eee;}
+	}
+}
