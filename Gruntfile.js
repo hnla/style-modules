@@ -1,3 +1,5 @@
+/* jshint node:true */
+/* global module */
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -18,7 +20,8 @@ module.exports = function(grunt) {
     files: {
       rtl:     MODULE_DIR + MODULE_NAME + '-rtl.css',
       css:     MODULE_DIR + MODULE_NAME + '.css',
-      preproc: MODULE_DIR + MODULE_NAME + preprocext,
+      js:      MODULE_DIR + MODULE_NAME + '.js',
+      preproc: MODULE_DIR + MODULE_NAME + preprocext
     },
 
     // https://github.com/sass/node-sass  - config
@@ -29,7 +32,7 @@ module.exports = function(grunt) {
           unixNewlines: true,
           indentType: 'tab',
           indentWidth: '1',
-          indentedSyntax: false,
+          indentedSyntax: false
         },
         cwd: MODULE_DIR,
         extDot: 'last',
@@ -37,7 +40,7 @@ module.exports = function(grunt) {
         ext: '.css',
         flatten: true,
         src:  ['*.scss'],
-        dest: 'members-list-module/',
+        dest: MODULE_DIR
         /*files: {                        // Dictionary of files
           '<%= files.css %>':  '<%= files.preproc %>',       // 'destination': 'source'
         }*/
@@ -80,10 +83,10 @@ module.exports = function(grunt) {
           opts: {
             clean: true,
             processUrls: false,
-            autoRename: false,
+            autoRename: false
           },
         saveUnmodified: false,
-        sourcemap: 'none',
+        sourcemap: 'none'
       },
 
       buildrtl: {
@@ -93,13 +96,13 @@ module.exports = function(grunt) {
         cwd: 'style-modules/',
         dest: MODULE_DIR,
         ext: '-rtl.css',
-        src: '<%= files.css %>',
+        src: '<%= files.css %>'
         },
         files:  {
-            '<%= files.rtl %>' : '<%= files.css %>',
+            '<%= files.rtl %>' : '<%= files.css %>'
         }
 
-      },
+      }
     },
     // lint scss files
     scsslint: {
@@ -111,17 +114,24 @@ module.exports = function(grunt) {
       core: [ MODULE_DIR + MODULE_NAME + preprocext ]
     },
     checkDependencies: {
-      //https://www.npmjs.com/package/grunt-check-dependencies
-      this: {
-        options: {
-            onlySpecified: true,
-            // install default = false
-            install: false,
-        },
-        // your_target: {
-            // Target-specific file lists and/or options go here.
-        // }
+      options: {
+        packageManager: 'npm'
       },
+      src: {}
+    },
+    jshint: {
+      options: grunt.file.readJSON( '.jshintrc' ),
+      grunt: {
+        src: ['Gruntfile.js']
+      },
+      core: {
+        expand: true,
+        cwd: MODULE_DIR,
+        src: ['*.js']
+
+       // file: 'members-list-module/members-list-module.js'
+
+      }
     },
     watch: {
       //scripts: {
@@ -130,8 +140,11 @@ module.exports = function(grunt) {
       //},
       sass: {
         files: [
-          MODULE_DIR + MODULE_NAME + preprocext,
+          MODULE_DIR + MODULE_NAME + preprocext, 'Gruntfile.js'
           ],
+        options: {
+          reload: true
+        },
         tasks: 'sass'
       }
       // uncomment to let 'watch' run on less files.
@@ -153,11 +166,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-rtlcss');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+
   // Build rtl css
-  grunt.registerTask('commit', ['rtlcss', 'scsslint']);
+  grunt.registerTask('commit', ['checkDependencies', 'jshint', 'scsslint', 'rtlcss']);
 
   // Default task(s).
   // ?
-  grunt.registerTask('default', ['uglify',]);
+  grunt.registerTask('default', ['uglify']);
 
 };
