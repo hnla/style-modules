@@ -4,33 +4,43 @@
 
 (function($){
 
-	var liItem = 'ul#members-list li .item-title';
-	var liActionCurrentUser = 'ul#members-list li.is-current-user .item';
+	var liItem = '#members-list li .item-title';
 	var viewportWidth = $(window).width();
 
-
-	var itemTitleHeight = $('ul#members-list li .item-title').map(function() {
+	// Get the item-title max height to set all occurences to match
+	var itemTitleHeight = $('#members-list li .item-title').map(function() {
 		return $(this).height();
 	}).get();
 
-	var itemTitleMaxHeight = Math.max.apply(null, itemTitleHeight);
+	var itemTitleMaxHeight = Math.max.apply(null, itemTitleHeight) + (30);
 
-	var actionButtons = $('ul#members-list li .action').map(function() {
+	// Get the action buttons height to use to set current users display actions
+	// if lacking in buttons.
+	var actionButtons = $('#members-list li .action ').map(function() {
 		return $(this).height();
 	}).get();
 
-	var actionButtonHeight = Math.max.apply(null, actionButtons);
+	var actionButtonMaxHeight = Math.max.apply(null, actionButtons) ;
 
-	// Set all list elements .item-title div to min-height to equal box height's &
+
+	// Add an inner div to work any styling design on allows use of parents
+	// padding property for spacing.
+	$('#members-list li').wrapInner('<div class="wrap">');
+
+	// Set all list elements .item-title div to have equal min-height based on the highest &
 	// add padding for empy action buttons container on current logged in user entry.
 
 	if(viewportWidth > '601') {
-		$( liItem ).css( {'min-height': itemTitleMaxHeight + 'px' });
-		$( liActionCurrentUser ).css({'padding-bottom': actionButtonHeight + 'px' });
+		$( liItem ).css({'min-height': itemTitleMaxHeight + 'px' });
 	}
-	if( $( 'ul#members-list li.is-current-user' ) ) {
-		$( 'ul#members-list li.is-current-user .action' ).hide();
+
+	$( '#members-list li .action' ).css({'min-height': actionButtonMaxHeight + 'px', 'margin-bottom': '-2px' });
+
+	if( $( '#members-list li.is-current-user' ) ) {
+		if( $( '#members-list li.is-current-user .action' ).children().length === 0 ) {
+
+		}
 	}
-//	alert(viewportWidth);
+	//alert(actionButtonMaxHeight);
 
 })(jQuery);

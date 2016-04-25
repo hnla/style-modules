@@ -28,11 +28,16 @@ the main Members dir or in the
 }
 
 #buddypress #members-list > li {
-	background: #f7f7f7;
 	border-bottom: 0;
-	margin-bottom: 15px;
-	overflow: hidden;
 	padding-bottom: 0;
+	padding-top: 0;
+}
+
+#buddypress #members-list > li .wrap {
+	background: #f7f7f7;
+	padding-bottom: 15px;
+	overflow: hidden;
+	padding-top: 15px;
 }
 
 #buddypress #members-list > li .item-avatar {
@@ -62,6 +67,7 @@ the main Members dir or in the
 }
 
 #buddypress #members-list > li .item .item-title .update {
+	font-size: 12px;
 	text-align: left;
 }
 
@@ -91,15 +97,14 @@ the main Members dir or in the
 @media screen and (min-width: 38.75em) {
 	#buddypress #members-list > li {
 		float: left;
-		min-height: 480px;
 		padding-bottom: 10px;
 		width: 50%;
 	}
 	#buddypress #members-list > li:nth-child(odd) {
-		border-right: 10px solid #fff;
+		padding-right: 10px;
 	}
 	#buddypress #members-list > li:nth-child(even) {
-		border-left: 10px solid #fff;
+		padding-left: 10px;
 	}
 	#buddypress #members-list > li .item-meta {
 		text-align: center;
@@ -109,7 +114,6 @@ the main Members dir or in the
 		width: 80%;
 	}
 	#buddypress #members-list > li .item .item-title {
-		min-height: 130px;
 		width: auto;
 	}
 	#buddypress #members-list > li div.action {
@@ -126,21 +130,19 @@ the main Members dir or in the
 
 @media screen and (min-width: 59.6875em) {
 	#buddypress #members-list > li {
+		padding-bottom: 15px;
 		width: 33.3%;
 	}
 	#buddypress #members-list > li:nth-child(1n+1) {
-		border-left: 5px solid #fff;
-		border-right: 5px solid #fff;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 	#buddypress #members-list > li:nth-child(3n+3) {
-		border-left: 10px solid #fff;
-		border-right: 0;
+		padding-left: 10px;
+		padding-right: 0;
 	}
 	#buddypress #members-list > li:nth-child(3n+1) {
-		border-left: 0;
-		border-right: 10px solid #fff;
-	}
-	#buddypress #members-list > li .item .item-title {
-		min-height: 190px;
+		padding-left: 0;
+		padding-right: 10px;
 	}
 }
