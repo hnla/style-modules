@@ -16,11 +16,12 @@ Would be a case of simply creating  a ul list of modules, links to the module on
 We can choose to use a new page on bp .org or create a github page for this purpose.
 
 -----------------------------------------------------------------------------------------------------
-The section below is the first pass and in progress repo instructions for authors and users.
+The section below is the first pass at the proposed general repo instructions aimed at both authors and users.
 Author guidelines for submitting and formatting etc will be here for reference.
-User instructions for downloading and installing a module will be here in detail to help facilitate
-loading along with copy/paste file enqueueing examples.
 
+User instructions for downloading and installing a module will be here to help facilitate
+usage along with copy/paste file enqueueing examples but the primary user instruction would be carried in the
+individual modules readme files along with specific copy/paste enqueueing code block.
 -----------------------------------------------------------------------------------------------------
 
 
