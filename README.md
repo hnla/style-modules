@@ -15,6 +15,11 @@ Would be a case of simply creating  a ul list of modules, links to the module on
 
 We can choose to use a new page on bp .org or create a github page for this purpose.
 
+**Loading and activation of Modules**
+
+Loading modules (essentially enqueueing the files) initially will be a matter of the end user installing the module folder in the right place, then copy/pasting the modules example enqueue code block to thier functions file.
+_( Originally the idea was to provide a automagic enqueue function that would look for modules and their files and enqueue an array of found files, this was either part of the  BP core functions.php or a standalone file in the MU pluginsdir, for my dev purposes I have a simple class checking and array building the files to enqueue run as a standard plugin.)_
+
 -----------------------------------------------------------------------------------------------------
 
 The section below is the first pass at the proposed general repo instructions aimed at both authors and users.
