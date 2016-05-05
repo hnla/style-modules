@@ -144,21 +144,21 @@ e.g:
 		return $sm_parts;
 		}
 
-		function enqueue_members_list_style() {
+		function enqueue_module_style() {
 		 $sm_parts = sm_module_path();
 		 $dir  = $sm_parts['path_to_file'];
 		 $rtl = ( is_rtl() )? '-rtl' : '';
 		 $file = $sm_parts['module_name'];
 			wp_enqueue_style( $file . '-styles',  $dir . $file . $rtl . '.css', array('bp-legacy-css'), false, 'screen' );
 		}
-		function enqueue_members_list_script() {
+		function enqueue_module_script() {
 		 $sm_parts = sm_module_path();
 		 $dir  = $sm_parts['path_to_file'];
 		 $file = $sm_parts['module_name'];
 			wp_enqueue_script( $file . '-script', $dir . $file . '.js', array('jquery'), false, true );
 		}
-		add_action('bp_enqueue_scripts', 'enqueue_members_list_style', 20);
-		add_action('bp_enqueue_scripts', 'enqueue_members_list_script');
+		add_action('bp_enqueue_scripts', 'enqueue_module_style', 20);
+		add_action('bp_enqueue_scripts', 'enqueue_module_script');
 
 		-------------------------------------------------------------------------------
 
