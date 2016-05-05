@@ -130,23 +130,30 @@ e.g:
 		$module_name = '';
 		
 		if( file_exists( get_stylesheet_directory() . '/buddypress/') ) :
-		 $sm_bp_dir = get_stylesheet_directory() . '/buddypress/';
+		 $sm_dir = get_stylesheet_directory_uri() . '/buddypress/style-modules/';
 		else: 
-		 $sm_bp_dir = get_stylesheet_directory() . '/community/';
+		 $sm_dir = get_stylesheet_directory_uri() . '/community/style-modules/';
 		endif;
 
-		$sm_parts['bp_dir'] => $sm_bp_dir;
-		$sm_parts['module_name'] => $module_name;
+		$sm_parts['sm_dir']       = $sm_dir;
+		$sm_parts['path_to_file'] = $sm_dir .  $module_name . '/';
+		$sm_parts['module_name']  = $module_name;
 		
 		return $sm_parts;
 		}
 		
 		function enqueue_members_list_style() {
 		 $sm_parts = sm_module_path();
-					wp_enqueue_style( 'members-list-module-styles',  get_stylesheet_directory_uri() . '/buddypress/style-modules/members-list-module/members-list-module.css', array('bp-legacy-css'), false, 'screen' );
+		 $dir  = $sm_parts['path_to_file'];
+		 $rtl = ( is_rtl() )? '-rtl' : '';
+		 $file = $sm_parts['module_name'];
+			wp_enqueue_style( $file . '-styles',  $dir . $file . $rtl . '.css', array('bp-legacy-css'), false, 'screen' );
 		}
 		function enqueue_members_list_script() {
-					wp_enqueue_script( 'members-list-module-script', get_stylesheet_directory_uri() . '/buddypress/style-modules/members-list-module/members-list-module.js', array('jquery'), false, true );
+		 $sm_parts = sm_module_path();
+		 $dir  = $sm_parts['path_to_file'];
+		 $file = $sm_parts['module_name'];
+			wp_enqueue_script( $file . '-script', $dir . $file . '.js', array('jquery'), false, true );
 		}
 		add_action('bp_enqueue_scripts', 'enqueue_members_list_style', 20);
 		add_action('bp_enqueue_scripts', 'enqueue_members_list_script');
