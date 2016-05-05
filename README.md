@@ -43,13 +43,15 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 
 ###Submitting###
-All submisions should be made by creating a ticket on trac.buddypress
+All submisions should be made by creating a ticket on [trac.buddypress] (https://buddypress.trac.wordpress.org/newticket) and selecting `Style Module` as the ticket type.
 
 Upload your folder(files) complete with SC & readme.md
 
 Add a brief decription of your submissions styling purpose e.g _"styles the user message tables..."_
 
-A core BP dev  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress repo.
+Please add a simple screen capture that provides a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page)
+
+A core BP developer  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress github repo where it will be available for people to download.
 
 ###Updates###
 
@@ -61,6 +63,8 @@ Authors are responsible for maintaining their modules against BP release cycles,
 * Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and comformity to a known existing standard.
 * Additionally each module should contain a readme.md file this is specifically for github display and allows us to display a neat and simplified module title and description to be displayed for users
 * Optionally  please try to include a SC of your styles in action.
+
+_You may use the members list module as a guide for readme formats_
 
 **Grunt task tools**
 
@@ -100,7 +104,7 @@ we'll broadly follow the conventions of use by WordPress plugins for this file; 
 These files will follow the formatting guidelines setout by WP.
 
 **Stylesheets**
-Formatting guidelines: https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/
+Formatting guidelines: [WP Coding Standards - CSS] (https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/)
 
 Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targetted to BP elements only, also they should try and use ancestor elements that represent the component this module is dealing with.
 
@@ -109,7 +113,7 @@ You may work with scss or less however please ensure compiled files are present 
 rtl versions - you will know whether you need to address rtl layouts (i.e floats left & right) if so please include rtl file version.
 
 **JavaScript**
-Formatting guidelines:  https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/
+Formatting guidelines:  [WP Coding Standards - JS] (https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/)
 
 ## Module Installation Instructions: ##
 In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends.
