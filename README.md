@@ -39,7 +39,7 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 # BP Style Module authoring guidelines & installation instructions
 
-_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates. Use of the modules is strictly at the users discretion._
+_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability. Use of the modules is strictly at the users discretion._
 
 ## Authors Guidelines:
 
@@ -95,7 +95,7 @@ The less provision is mainly commented out and the less aspects would need testi
 
 Naturally if you're using the gruntfile please feel free to re-factor as you feel fit, this is only provided as a convenience.
 
-####readme.txt file###
+####readme.txt file####
 we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
 * The header details ( initially BP might be using thse but we are adding so that we can at a later date)
 * The module description - this is how we'll ensure that users can understans what the module offers ( SC also help here! )
@@ -162,4 +162,4 @@ e.g:
 
 		-------------------------------------------------------------------------------
 
-Authors please note that for the moment while we need to provide hardcoded examples for loading  / enqueueing files we can't be sure what naming convention will be used for the BuddyPress folder so need to make comment that users need to check that and possibly change the reference in the path links to suit.
+
