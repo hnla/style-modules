@@ -8,7 +8,7 @@ The module requires a companion script file providing some enhancements to add e
 
 ## Installing
 
-To install this module copy it to your child theme. The module needs to live in a directory named `/style-modules/` this directory or folder lives in turn in the child themes buddypress or community directory depending on how you have named your BP directory. You should then have something similar to this structure:
+To install this module copy it to your child theme. The module needs to live in a directory named `/style-modules/` this directory or folder lives in turn in the child themes `/buddypress` or `/community` directory depending on how you have named your BP directory. You should then have something similar to this structure:
 
 `my-child-theme/buddypress/style-modules/members-list-module/`
 
@@ -17,7 +17,7 @@ To load the required files you will need to add this block of code to your funct
 
 	-------------------------------------------------------------------------------
 
-			/*
+		/*
 		* Check & build the required paths to the files
 		*/
 		function sm_module_path() {
