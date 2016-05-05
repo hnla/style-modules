@@ -20,9 +20,9 @@ We can choose to use a new page on bp .org or create a github page for this purp
 Loading modules (essentially enqueueing the files) initially will be a matter of the end user installing the module folder in the right place, then copy/pasting the modules example enqueue code block to thier functions file.
 _( Originally the idea was to provide a automagic enqueue function that would look for modules and their files and enqueue an array of found files, this was either part of the  BP core functions.php or a standalone file in the MU plugins dir, for my dev purposes I have a simple function checking and building an array of files to enqueue run as a standard plugin.)_
 
-Part of my concern and thoughts behind wanting an automatted approach were two fold:
+Part of my concern and thoughts behind wanting an automated approach were two fold:
 1/ Ensure the process for running these modules was as dead simple as possible for the end user.
-2/ Allow multiple modules to be loaded without having to add a new enueue block for each one, clumsy at best!
+2/ Allow multiple modules to be loaded without having to add a new enqueue block for each one, clumsy at best!
 
 -----------------------------------------------------------------------------------------------------
 
@@ -45,11 +45,11 @@ _Style Modules are provided on the understanding that they are authored by membe
 
 
 ###Submitting###
-All submisions should be made by creating a ticket on [trac.buddypress] (https://buddypress.trac.wordpress.org/newticket) and selecting `Style Module` as the ticket type.
+All submissions should be made by creating a ticket on [trac.buddypress] (https://buddypress.trac.wordpress.org/newticket) and selecting `Style Module` as the ticket type.
 
 Upload your folder(files) complete with SC & readme.md
 
-Add a brief decription of your submissions styling purpose e.g _"styles the user message tables..."_
+Add a brief description of your submissions styling purpose e.g _"styles the user message tables..."_
 
 Please add a simple screen capture that provides a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page)
 
@@ -62,7 +62,7 @@ Authors are responsible for maintaining their modules against BP release cycles,
 ###Creating Module files:###
 
 * All Modules must include one of either a .css or .js file
-* Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and comformity to a known existing standard.
+* Modules must also include a readme.txt file (follows the general format of WP plugin readme files for convenience and conformity to a known existing standard.
 * Additionally each module should contain a readme.md file this is specifically for github display and allows us to display a neat and simplified module title and description to be displayed for users
 * Optionally  please try to include a SC of your styles in action.
 
@@ -97,18 +97,18 @@ Naturally if you're using the gruntfile please feel free to re-factor as you fee
 
 ####readme.txt file####
 we'll broadly follow the conventions of use by WordPress plugins for this file; for Modules the important areas are.
-* The header details ( initially BP might be using thse but we are adding so that we can at a later date)
-* The module description - this is how we'll ensure that users can understans what the module offers ( SC also help here! )
+* The header details ( initially BP might be using these but we are adding so that we can at a later date)
+* The module description - this is how we'll ensure that users can understand what the module offers ( SC also help here! )
 * Installation guide complete with copy/paste code ( following the example provided we need  the module to provide quite detailed steps to installing, copy/paste code using your module name where applicable will help non technical users)
 
 ####The style & JS files####
 
-These files will follow the formatting guidelines setout by WP.
+These files will follow the formatting guidelines set out by WP.
 
 **Stylesheets**
 Formatting guidelines: [WP Coding Standards - CSS] (https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/)
 
-Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targetted to BP elements only, also they should try and use ancestor elements that represent the component this module is dealing with.
+Your file should pay attention to using the BP id '#buddypress' to ensure your rules are targeted to BP elements only, also they should try and use ancestor elements that represent the component this module is dealing with.
 
 You may work with scss or less however please ensure compiled files are present in the module package along with the source pre-processor file.
 
@@ -118,7 +118,7 @@ rtl versions - you will know whether you need to address rtl layouts (i.e floats
 Formatting guidelines:  [WP Coding Standards - JS] (https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/)
 
 ## Module Installation Instructions: ##
-In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends. The example below will handle finding the BP dir name used  and build the paths, you would simply need to add the style modules name.
+In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP recommends. The example below will handle finding the BP dir name used  and build the paths, you would simply need to add the style modules name.
 e.g:
 
 		-------------------------------------------------------------------------------
@@ -126,24 +126,24 @@ e.g:
 		* Check & build the required paths to the files
 		*/
 		function sm_module_path() {
-		
+
 		$sm_parts = array();
 		// Authors add your modules name
 		$module_name = '';
-		
+
 		if( file_exists( get_stylesheet_directory() . '/buddypress/') ) :
 		 $sm_dir = get_stylesheet_directory_uri() . '/buddypress/style-modules/';
-		else: 
+		else:
 		 $sm_dir = get_stylesheet_directory_uri() . '/community/style-modules/';
 		endif;
 
 		$sm_parts['sm_dir']       = $sm_dir;
 		$sm_parts['path_to_file'] = $sm_dir .  $module_name . '/';
 		$sm_parts['module_name']  = $module_name;
-		
+
 		return $sm_parts;
 		}
-		
+
 		function enqueue_members_list_style() {
 		 $sm_parts = sm_module_path();
 		 $dir  = $sm_parts['path_to_file'];
