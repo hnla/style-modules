@@ -120,8 +120,29 @@ In your readme.txt file please include details on how to enqueue your files. Pro
 e.g:
 
 		-------------------------------------------------------------------------------
+		/*
+		* Check & build the required paths to the files
+		*/
+		function sm_module_path() {
+		
+		$sm_parts = array();
+		// Authors add your modules name
+		$module_name = '';
+		
+		if( file_exists( get_stylesheet_directory() . '/buddypress/') ) :
+		 $sm_bp_dir = get_stylesheet_directory() . '/buddypress/';
+		else: 
+		 $sm_bp_dir = get_stylesheet_directory() . '/community/';
+		endif;
 
+		$sm_parts['bp_dir'] => $sm_bp_dir;
+		$sm_parts['module_name'] => $module_name;
+		
+		return $sm_parts;
+		}
+		
 		function enqueue_members_list_style() {
+		 $sm_parts = sm_module_path();
 					wp_enqueue_style( 'members-list-module-styles',  get_stylesheet_directory_uri() . '/buddypress/style-modules/members-list-module/members-list-module.css', array('bp-legacy-css'), false, 'screen' );
 		}
 		function enqueue_members_list_script() {
