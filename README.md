@@ -131,3 +131,5 @@ e.g:
 		add_action('bp_enqueue_scripts', 'enqueue_members_list_script');
 
 		-------------------------------------------------------------------------------
+
+Authors please note that for the moment while we need to provide hardcoded examples for loading  / enqueueing files we can't be sure what naming convention will be used for the BuddyPress folder so need to make comment that users need to check that and possibly change the reference in the path links to suit.
