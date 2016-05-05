@@ -39,6 +39,8 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 # BP Style Module authoring guidelines & installation instructions
 
+_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates. Use of the modules is strictly at the users discretion._
+
 ## Authors Guidelines:
 
 
@@ -116,7 +118,7 @@ rtl versions - you will know whether you need to address rtl layouts (i.e floats
 Formatting guidelines:  [WP Coding Standards - JS] (https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/)
 
 ## Module Installation Instructions: ##
-In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends.
+In your readme.txt file please include details on how to enqueue your files. Provide a copy and paste example for your particular module enqueued in the manner WP reccommends. The example below will handle finding the BP dir name used  and build the paths, you would simply need to add the style modules name.
 e.g:
 
 		-------------------------------------------------------------------------------
