@@ -41,7 +41,9 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 _Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability. Use of the modules is strictly at the users discretion._
 
-This readme covers essential guidence for <a href="#authors-guidelines">authors</a> and for <a href="#user-guidelines">users</a>.
+This readme covers essential guidence for:
+* **<a href="#authors-guidelines">authors</a>**
+* **<a href="#user-guidelines">users</a>**
 
 ## <span id="author-guidelines">Authors Guidelines</span>:
 
@@ -170,6 +172,6 @@ e.g:
 **Installing a chosen module:**
 
 Users will need to create a folder in their`/buddypress/` or `/community/` directory to hold the style modules. Modules are always located in the folder `/style-modules/` so to use the `members-list-module`  you would need to create a folder structure that looks like this:
-`wp-content/my-theme/buddypress/style-modules/members-list-module`
+`wp-content/my-theme/buddypress/style-modules/members-list-module/`
 
 You now need to simply copy the content of the modules directory on the repo to your directory and copy the modules loading/enqueueing functions to your functions.php file.
