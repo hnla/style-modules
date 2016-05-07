@@ -39,7 +39,7 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 # BP Style Module authoring guidelines & installation instructions
 
-_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability. Use of the modules is strictly at the users discretion._
+_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability for the use of modules on a site.. Use of the modules is strictly at the users discretion._
 
 This readme covers essential guidence for:
 * **<a href="#authors-guidelines">authors</a>**
@@ -51,13 +51,13 @@ This readme covers essential guidence for:
 ###Submitting###
 All submissions should be made by creating a ticket on [trac.buddypress] (https://buddypress.trac.wordpress.org/newticket) and selecting `Style Module` as the ticket type.
 
-Upload your folder(files) complete with SC & readme.md
+Upload your folder(files) zipped complete with seperate SC & readme.md
 
 Add a brief description of your submissions styling purpose e.g _"styles the user message tables..."_
 
-Please add a simple screen capture that provides a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page)
+The screen capture will provide a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page and in the readme.md file please add a link to the image - see the example readme)
 
-A core BP developer  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress github repo where it will be available for people to download.
+A core BP developer  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission the zip and SC/readme files will be uploaded to the BuddyPress github repo where it will be available for people to download.
 
 ###Updates###
 
@@ -174,4 +174,4 @@ e.g:
 Users will need to create a folder in their`/buddypress/` or `/community/` directory to hold the style modules. Modules are always located in the folder `/style-modules/` so to use the `members-list-module`  you would need to create a folder structure that looks like this:
 `wp-content/my-theme/buddypress/style-modules/members-list-module/`
 
-You now need to simply copy the content of the modules directory on the repo to your directory and copy the modules loading/enqueueing functions to your functions.php file.
+You need to download the zip file - from the listing download link or directly from the github repo -  and copy the modules loading/enqueueing functions to your functions.php file.
