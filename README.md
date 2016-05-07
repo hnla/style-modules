@@ -17,7 +17,7 @@ We can choose to use a new page on bp .org or create a github page for this purp
 
 **Loading and activation of Modules**
 
-Loading modules (essentially enqueueing the files) initially will be a matter of the end user installing the module folder in the right place, then copy/pasting the modules example enqueue code block to thier functions file.
+Loading modules (essentially enqueueing the files) initially will be a matter of the end user installing the module folder in the right place, then copy/pasting the modules example enqueue code block to their functions file.
 _( Originally the idea was to provide a automagic enqueue function that would look for modules and their files and enqueue an array of found files, this was either part of the  BP core functions.php or a standalone file in the MU plugins dir, for my dev purposes I have a simple function checking and building an array of files to enqueue run as a standard plugin.)_
 
 Part of my concern and thoughts behind wanting an automated approach were two fold:
@@ -39,21 +39,25 @@ individual modules readme files along with specific copy/paste enqueueing code b
 
 # BP Style Module authoring guidelines & installation instructions
 
-_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability. Use of the modules is strictly at the users discretion._
+_Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability for the use of modules on a site.. Use of the modules is strictly at the users discretion._
 
-## Authors Guidelines:
+This readme covers essential guidence for:
+* **<a href="#authors-guidelines">Authors</a>**
+* **<a href="#user-guidelines">Users</a>**
+
+## <span id="author-guidelines">Authors Guidelines</span>:
 
 
 ###Submitting###
 All submissions should be made by creating a ticket on [trac.buddypress] (https://buddypress.trac.wordpress.org/newticket) and selecting `Style Module` as the ticket type.
 
-Upload your folder(files) complete with SC & readme.md
+Upload your folder(files) zipped complete with seperate SC & readme.md
 
 Add a brief description of your submissions styling purpose e.g _"styles the user message tables..."_
 
-Please add a simple screen capture that provides a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page)
+The screen capture will provide a quick visual reference to your module styling, (label it style-module.jpg as we will attempt to load this image file on the modules listing page and in the readme.md file please add a link to the image - see the example readme)
 
-A core BP developer  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission it will be uploaded to the BuddyPress github repo where it will be available for people to download.
+A core BP developer  will download your submission and run a basic check for formatting standards and error free code, when two devs have signed off on the submission the zip and SC/readme files will be uploaded to the BuddyPress github repo where it will be available for people to download.
 
 ###Updates###
 
@@ -163,3 +167,11 @@ e.g:
 		-------------------------------------------------------------------------------
 
 
+## <span id="user-guidelines">User Guidelines</span>:
+
+**Installing a chosen module:**
+
+Users will need to create a folder in their`/buddypress/` or `/community/` directory to hold the style modules. Modules are always located in the folder `/style-modules/` so to use the `members-list-module`  you would need to create a folder structure that looks like this:
+`wp-content/my-theme/buddypress/style-modules/members-list-module/`
+
+You need to download the zip file - from the listing download link or directly from the github repo -  and copy the modules loading/enqueueing functions to your functions.php file.
