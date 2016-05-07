@@ -142,9 +142,12 @@ module.exports = function(grunt) {
 								files: [
 										MODULE_DIR + MODULE_NAME + preprocext, 'Gruntfile.js'
 										],
-								options: {
-										reload: true
-								},
+								//options: {
+										// Reload reloads the watch config for any file change
+										// not required if wanting to reload on gruntfile changes
+										// only as it's a default to  reload if gruntfile changes
+										//reload: true
+								//},
 								tasks: 'sass'
 						}
 						// uncomment to let 'watch' run on less files.
