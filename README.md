@@ -42,8 +42,8 @@ individual modules readme files along with specific copy/paste enqueueing code b
 _Style Modules are provided on the understanding that they are authored by members of the community, and while BP will undertake some basic checks on the files it cannot guarantee the suitability of a module in a given theme nor accept responsibility for updates or any general liability for the use of modules on a site.. Use of the modules is strictly at the users discretion._
 
 This readme covers essential guidence for:
-* **<a href="#authors-guidelines">authors</a>**
-* **<a href="#user-guidelines">users</a>**
+* **<a href="#authors-guidelines">Authors</a>**
+* **<a href="#user-guidelines">Users</a>**
 
 ## <span id="author-guidelines">Authors Guidelines</span>:
 
