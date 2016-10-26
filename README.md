@@ -177,15 +177,15 @@ e.g:
 			wp_enqueue_script( $file . '-script', $dir . $file . '.js', array('jquery'), false, true );
 		}
 
-function sm_load_files() {
-		if( !empty( sm_module_parts()->module_name ) ) {
-			add_action('bp_enqueue_scripts', 'enqueue_module_style', 20);
+		function sm_load_files() {
+			if( !empty( sm_module_parts()->module_name ) ) {
+				add_action('bp_enqueue_scripts', 'enqueue_module_style', 20);
 
-			if( false !== sm_module_parts()->js_support )
-				add_action('bp_enqueue_scripts', 'enqueue_module_script', 20);
+				if( false !== sm_module_parts()->js_support )
+					add_action('bp_enqueue_scripts', 'enqueue_module_script', 20);
+			}
 		}
-}
-add_action('bp_after_setup_theme', 'sm_load_files');
+		add_action('bp_after_setup_theme', 'sm_load_files');
 
 		-------------------------------------------------------------------------------
 
