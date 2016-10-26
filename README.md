@@ -131,38 +131,51 @@ e.g:
 		*/
 		function sm_module_path() {
 
-		$sm_parts = array();
-		// Authors add your modules name
-		$module_name = '';
+			$sm_parts = array();
 
-		if( file_exists( get_stylesheet_directory() . '/buddypress/') ) :
-		 $sm_dir = get_stylesheet_directory_uri() . '/buddypress/style-modules/';
-		else:
-		 $sm_dir = get_stylesheet_directory_uri() . '/community/style-modules/';
-		endif;
+			// Authors add your modules name & set whether your module has a JS file
+			$module_name = '';
+			// Does your module have a supporting JS file? ( bool true/false )
+			$js_support = false;
 
-		$sm_parts['sm_dir']       = $sm_dir;
-		$sm_parts['path_to_file'] = $sm_dir .  $module_name . '/';
-		$sm_parts['module_name']  = $module_name;
+			if( file_exists( get_stylesheet_directory() . '/buddypress/') ) :
+				$sm_dir = get_stylesheet_directory_uri() . '/buddypress/style-modules/';
+			else:
+				$sm_dir = get_stylesheet_directory_uri() . '/community/style-modules/';
+			endif;
 
-		return $sm_parts;
+			$sm_parts['sm_dir']       = $sm_dir;
+			$sm_parts['path_to_file'] = $sm_dir .  $module_name . '/';
+			$sm_parts['module_name']  = $module_name;
+			$sm_parts['js_support']   = $js_support;
+
+			return $sm_parts;
 		}
 
 		function enqueue_module_style() {
-		 $sm_parts = sm_module_path();
-		 $dir  = $sm_parts['path_to_file'];
-		 $rtl = ( is_rtl() )? '-rtl' : '';
-		 $file = $sm_parts['module_name'];
+			$sm_parts = sm_module_path();
+			$dir  = $sm_parts['path_to_file'];
+			$rtl = ( is_rtl() )? '-rtl' : '';
+			$file = $sm_parts['module_name'];
 			wp_enqueue_style( $file . '-styles',  $dir . $file . $rtl . '.css', array('bp-legacy-css'), false, 'screen' );
 		}
+
 		function enqueue_module_script() {
-		 $sm_parts = sm_module_path();
-		 $dir  = $sm_parts['path_to_file'];
-		 $file = $sm_parts['module_name'];
+			if( false === $sm_parts['js_support'] )
+			return false;
+
+			$sm_parts = sm_module_path();
+			$dir  = $sm_parts['path_to_file'];
+			$file = $sm_parts['module_name'];
 			wp_enqueue_script( $file . '-script', $dir . $file . '.js', array('jquery'), false, true );
 		}
-		add_action('bp_enqueue_scripts', 'enqueue_module_style', 20);
-		add_action('bp_enqueue_scripts', 'enqueue_module_script');
+
+		if( bp_loaded() && !empty( $sm_parts['module_name'] ) ) {
+			add_action('bp_enqueue_scripts', 'enqueue_module_style', 20);
+
+			if( false !== enqueue_module_script() )
+				add_action('bp_enqueue_scripts', 'enqueue_module_script');
+		}
 
 		-------------------------------------------------------------------------------
 
