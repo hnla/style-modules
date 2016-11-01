@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 								flatten: true,
 								src:  ['*.scss'],
 								dest: MODULE_DIR
-								/*files: {                        // Dictionary of files
+								/*files: {                       // Dictionary of files
 										'<%= files.css %>':  '<%= files.preproc %>',       // 'destination': 'source'
 								}*/
 						}
@@ -104,15 +104,35 @@ module.exports = function(grunt) {
 
 						}
 				},
-				// lint scss files
-				scsslint: {
+
+				stylelint: {
+					css: {
 						options: {
-								bundleExec: false,
-								colorizeOutput: true,
-								config: '.scss-lint.yml'
+							configFile: '.stylelintrc',
+							format: 'css'
 						},
-						core: [ MODULE_DIR + MODULE_NAME + preprocext ]
+						expand: true,
+						cwd: MODULE_DIR,
+						src: [
+						'*.css',
+						MODULE_NAME + '.css',
+						'!' + MODULE_NAME + '-rtl.css'
+						]
+						//ignoreFiles: 'bp-nouveau/css/*-rtl.css'
+					},
+					scss: {
+						options: {
+							configFile: '.stylelintrc',
+							format: 'scss'
+						},
+						expand: true,
+						cwd: MODULE_DIR,
+						src: [
+							'*.scss'
+						]
+					}
 				},
+
 				checkDependencies: {
 						options: {
 								packageManager: 'npm'
@@ -166,12 +186,12 @@ module.exports = function(grunt) {
 		//grunt.loadNpmTasks('grunt-contrib-sass');
 		grunt.loadNpmTasks('grunt-sass');
 		//grunt.loadNpmTasks('grunt-contrib-less');
-		grunt.loadNpmTasks('grunt-scss-lint');
+		grunt.loadNpmTasks('grunt-stylelint');
 		grunt.loadNpmTasks('grunt-rtlcss');
 		grunt.loadNpmTasks('grunt-contrib-jshint');
 
 		// Build rtl css
-		grunt.registerTask('commit', ['checkDependencies', 'jshint', 'scsslint', 'rtlcss']);
+		grunt.registerTask('commit', ['checkDependencies', 'jshint', 'stylelint:scss', 'rtlcss']);
 
 		// Default task(s).
 		// ?
