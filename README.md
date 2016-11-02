@@ -32,6 +32,9 @@ The loader is in a zip file that just needs downloading and unzipping in the use
 
 https://github.com/hnla/style-modules/blob/master/bp-style-module-loader/
 
+Download:
+https://github.com/hnla/style-modules/raw/master/bp-style-module-loader/bp-modules-loader.zip
+
 -----------------------------------------------------------------------------------------------------
 
 The section below is the first pass at the proposed general repo instructions aimed at both authors and users.
