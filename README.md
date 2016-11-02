@@ -25,11 +25,12 @@ Part of my concern and thoughts behind wanting an automated approach were two fo
 2/ Allow multiple modules to be loaded without having to add a new enqueue block for each one, clumsy at best!
 
 Update 1/11/16:
+
 I have uploaded a version of the loading function to scan and enqueue found modules as I believe this aspect needs to be simplified and  asking people to copy paste code into functions file however well specified  might well be off putting.
 
 The loader is in a zip file that just needs downloading and unzipping in the users plugin directory and then activating as normal.
 
-https://github.com/hnla/style-modules/blob/master/bp-style-module-loader/bp-modules-loader.zip
+https://github.com/hnla/style-modules/blob/master/bp-style-module-loader/
 
 -----------------------------------------------------------------------------------------------------
 
